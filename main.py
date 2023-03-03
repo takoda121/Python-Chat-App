@@ -46,7 +46,14 @@ def update_text():
         msg = kundaprc["message"][count-1]
         msg = msg.replace("Ł", " ")
         if (count + 1 > 20):
-            textbox.delete(1.0, "end")
+            cunt = 0
+            textbox.delete("1.0", tkinter.END)
+            last_lines = kundaprc["username"][-20:]
+            for line in last_lines:
+                kripl = kundaprc["message"][-20+cunt]
+                kokotskykripl = kripl.replace("Ł", " ")
+                textbox.insert("end", f'{line}: {kokotskykripl} \n')
+                cunt = cunt + 1
         if stupid == "":
             textbox.insert("end", stupid + " "+msg+ "\n")
         else:
@@ -66,7 +73,18 @@ for stupid in output["username"]:
         msg = output["message"][count-1]
         msg = msg.replace("Ł", " ")
         if (count + 1 > 20):
-            textbox.delete(1.0, "end")
+            cunt = 0
+            textbox.delete("1.0", tkinter.END)
+            last_lines = output["username"][-20:]
+            if (count + 1 > 20):
+                cunt = 0
+                textbox.delete("1.0", tkinter.END)
+                last_lines = output["username"][-20:]
+                for line in last_lines:
+                    kripl = output["message"][-20+cunt]
+                    kokotskykripl = kripl.replace("Ł", " ")
+                    textbox.insert("end", f'{line}: {kokotskykripl} \n')
+                    cunt = cunt + 1
         if stupid == "":
             textbox.insert("end", stupid + " "+msg+ "\n")
         else:
