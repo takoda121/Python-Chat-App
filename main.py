@@ -45,6 +45,8 @@ def update_text():
         count = count + 1
         msg = kundaprc["message"][count-1]
         msg = msg.replace("Ł", " ")
+        if (count + 1 > 20):
+            textbox.delete(1.0, "end")
         if stupid == "":
             textbox.insert("end", stupid + " "+msg+ "\n")
         else:
@@ -63,6 +65,8 @@ for stupid in output["username"]:
         count = count + 1
         msg = output["message"][count-1]
         msg = msg.replace("Ł", " ")
+        if (count + 1 > 20):
+            textbox.delete(1.0, "end")
         if stupid == "":
             textbox.insert("end", stupid + " "+msg+ "\n")
         else:
@@ -82,6 +86,7 @@ def write():
         messagebox.showinfo("Alert", "A letter (Ł) in your message was blacklisted!")
         return
     requests.get(f"{DOMAIN}pswrde&userl={key}&msgl={bab}")
+    update_text()
 
 string_input_button = customtkinter.CTkButton(app, text="Send",command=write)
 string_input_button.grid(row=5, column=0, padx=20, pady=(10, 10))
