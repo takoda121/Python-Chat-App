@@ -1,7 +1,7 @@
 import requests, json, customtkinter,tkinter, threading, time
 from tkinter import messagebox
 
-DOMAIN = "http://localhost:8080/ami.php?" #The url/file for the api
+DOMAIN = "https://chat.megaleaksroblox.ml/ami.php?" #The url/file for the api
 AUTO_UPDATE_CHAT = True #Updates the chat every 3 seconds.
 texte = str(requests.get(f"{DOMAIN}pswrd").text)
 
@@ -17,7 +17,7 @@ def convert_to_dict(text):
     return(data)
 
 
-#print(convert_to_dict(texte))
+print(convert_to_dict(texte))
 output = convert_to_dict(texte)
 customtkinter.set_appearance_mode("dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -50,7 +50,7 @@ def update_text():
         else:
             textbox.insert("end", stupid + ": "+msg+ "\n")
         textbox.see(tkinter.END)
-        textbox.configure(state="disabled")
+    textbox.configure(state="disabled")
 
 def kokotar():
     while 1 != 2:
