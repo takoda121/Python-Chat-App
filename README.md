@@ -1,4 +1,5 @@
-<h1 align="center">Python Chat App 💬</p>  
+<h1 align="center">Python Chat App 💬</h1>  
+
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Coded+in+PHP%2C+Python;Made+by+Take%239044;Open+source+(GNU+GPLv3);Backward+Compatible+)](https://git.io/typing-svg)
 
 
