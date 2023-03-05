@@ -17,4 +17,7 @@
 ### users.json (Server) 💾
 > Stores Chat Key, Name for the chat key user, Role for the chat key user  
 > Current roles are user and admin
+### Admin role 🚨
+> It's not that hard! Just put this character: ㅤ (\u3164) next to their username!   
+> Makes their username red   
 
