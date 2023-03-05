@@ -36,6 +36,7 @@ if (isset($lmaoedb[$debil])){
     if (strlen($_GET["msgl"]) > 100){
         die("Too long!");
     }
+    echo $_GET["msgl"];
     array_push($lmaodb["username"],$lmaoedb[$debil][0]);
     array_push($lmaodb["message"],$kreten);
     array_push($lmaodb["time"],time());

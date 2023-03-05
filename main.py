@@ -1,7 +1,7 @@
 import requests, json, customtkinter,tkinter, threading, time
 from tkinter import messagebox
 
-DOMAIN = "https://chat.megaleaksroblox.ml/ami.php?" #The url/file for the api
+DOMAIN = "http://localhost:8080/ami.php?" #The url/file for the api
 AUTO_UPDATE_CHAT = True #Updates the chat every 3 seconds.
 texte = str(requests.get(f"{DOMAIN}pswrd").text)
 
@@ -52,12 +52,18 @@ def update_text():
             for line in last_lines:
                 kripl = kundaprc["message"][-20+cunt]
                 kokotskykripl = kripl.replace("Ł", " ")
-                textbox.insert("end", f'{line}: {kokotskykripl} \n')
-                cunt = cunt + 1
-        if stupid == "":
-            textbox.insert("end", stupid + " "+msg+ "\n")
+        if "\u3164" in stupid:
+            print("huh")
+            line = stupid.replace("\u3164","")
+            username = line.split(": ")
+            textbox.insert("end", username, "username_tag")
+            textbox.tag_config("username_tag", foreground="red")
+            textbox.insert("end", f": {msg}")
         else:
-            textbox.insert("end", stupid + ": "+msg+ "\n")
+            textbox.insert("end", f'{stupid}: {msg} \n',)
+        if stupid == "":
+            textbox.insert("end", stupid + " "+msg+ "\n","username_tag")
+            textbox.tag_config("username_tag", foreground="red")
         textbox.see(tkinter.END)
     textbox.configure(state="disabled")
 
@@ -83,12 +89,22 @@ for stupid in output["username"]:
                 for line in last_lines:
                     kripl = output["message"][-20+cunt]
                     kokotskykripl = kripl.replace("Ł", " ")
-                    textbox.insert("end", f'{line}: {kokotskykripl} \n')
+                    if "ㅤ" in line:
+                        buduprcatte = line.replace("ㅤ", "")
+                        textbox.tag_config(buduprcatte, foreground="red")
+                        textbox.insert("end", f'{buduprcatte}: {msg} \n')
+                    else:
+                        textbox.insert("end", f'{line}: {kokotskykripl} \n')
                     cunt = cunt + 1
         if stupid == "":
             textbox.insert("end", stupid + " "+msg+ "\n")
         else:
-            textbox.insert("end", stupid + ": "+msg+ "\n")
+            if "ㅤ" in stupid:
+                buduprcatte = stupid.replace("ㅤ", "")
+                textbox.tag_config(buduprcatte, foreground="red")
+                textbox.insert("end", f'{buduprcatte}: {msg} \n')
+            else:
+                textbox.insert("end", f'{stupid}: {msg} \n')
 textbox.configure(state="disabled")
 textbox.yview_moveto(1.0)
 textbox.see(tkinter.END)
