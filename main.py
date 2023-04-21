@@ -119,7 +119,9 @@ def write():
     if "Ł" in bab:
         messagebox.showinfo("Alert", "A letter (Ł) in your message was blacklisted!")
         return
-    requests.get(f"{DOMAIN}pswrde&userl={key}&msgl={bab}")
+    writereq = requests.get(f"{DOMAIN}pswrde&userl={key}&msgl={bab}")
+    if writereq.text == "Your message was flaged as toxic!":
+        messagebox.showinfo("Alert", "Your message is too toxic!")
     update_text()
 
 string_input_button = customtkinter.CTkButton(app, text="Send",command=write)
