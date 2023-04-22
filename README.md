@@ -20,4 +20,5 @@
 ### Admin role 🚨
 > It's not that hard! Just put this character: ㅤ (\u3164) next to their username!   
 > Makes their username red   
-
+## Client 🧮
+> Nothing really.

@@ -2,7 +2,7 @@
 $REQUIRE_CHAT_KEY = True; //Not done yet
 $ANTI_TOXIC = True; //IF TRUE ENTER A API KEY ON LINE 5 https://support.perspectiveapi.com/s/docs-get-started?language=en_US
 function analyzeToxicity($comment) {
-    $ANTI_TOXIC_API_KEY = "";
+    $ANTI_TOXIC_API_KEY = "AIzaSyAYyCnhTDYB4jiS_spoPxemfjDfVGluJjY";
     $MAX_TOXICITY = 0.5;
     $apiEndpoint = 'https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze';
     $contentType = 'application/json';
