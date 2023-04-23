@@ -20,5 +20,7 @@
 ### Admin role 🚨
 > It's not that hard! Just put this character: ㅤ (\u3164) next to their username!   
 > Makes their username red   
+### Server Settings ⚙️
+> If you want Anti-Toxicity than get a Perspective API key.  
 ## Client 🧮
 > Nothing really.
